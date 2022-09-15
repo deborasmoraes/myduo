@@ -1,0 +1,18 @@
+   <NavigationContainer>
+      <Stack.Navigator> 
+      <Stack.Screen
+      name =  'Init'
+      component={Init}
+      />
+      <Stack.Screen
+      name =  'Login'
+      component={Teste}
+      />
+      
+      <Stack.Screen
+      name =  'Register'
+      component={PageRegistrar}
+      />
+      </Stack.Navigator>
+      </NavigationContainer>
+      const Stack = createNativeStackNavigator()
