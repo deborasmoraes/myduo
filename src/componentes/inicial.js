@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   myduo: {
     backgroundColor: 'rgba(0, 24, 47, 0.9)',
-    height: 550,
+    height: 600,
     border: '#1976D2',
     borderWidth: 1,
     borderBottomEndRadius: 20,

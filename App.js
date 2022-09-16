@@ -19,8 +19,14 @@ export default function App() {
   return (
   <NavigationContainer>
     <Stack.Navigator>
-    <Stack.Screen name="Home" component={Init} />
-    <Stack.Screen name="Login" component={PageLogin} />
+    <Stack.Screen 
+     options={{title: '', headerTransparent: true,
+    headerShown: false}}
+     name="Home" component={Init} />
+    <Stack.Screen 
+    options={{title: '', headerTransparent: true,
+    headerShown: false}}
+    name="Login" component={PageLogin} />
     <Stack.Screen name="Registrar" component={PageRegistrar}/>
     <Stack.Screen name="Redefinir" component={Redefinir}/>
     <Stack.Screen name="Duos" component={Duos}/>
