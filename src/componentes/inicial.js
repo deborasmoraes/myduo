@@ -5,7 +5,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Init({ navigation }) {
   return (
+     <LinearGradient
+        colors={['rgba(255, 255, 255, 0.51)', 'rgba(106, 126, 229, 0.39)']}
+        start={{ x: 4, y: 30 }}
+        end={{ x: 4, y: 50 }}
+         > 
     <View>
+
       <View style={styles.myduo}>
         <Image 
           source={require('../../assets/myduo.png')}
@@ -13,12 +19,7 @@ export default function Init({ navigation }) {
         ></Image>
         <Text style={styles.corTextoMD}>MyDuo</Text>
       </View>
-      <LinearGradient
-      style={styles.gradient}
-        colors={['rgba(255, 255, 255, 0.51)', 'rgba(106, 126, 229, 0.39)']}
-        start={{ x: 4, y: 30 }}
-        end={{ x: 4, y: 50 }}
-         >
+      
         <TouchableOpacity
         style={styles.botaoLogin}
           onPress={() => {
@@ -32,16 +33,17 @@ export default function Init({ navigation }) {
             navigation.navigate('Registrar', { nome: 'Registrar' })
           }}
         ><Text>Registre-se!</Text></TouchableOpacity>
-      </LinearGradient>
+      
 
     </View>
-
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
+    justifyContent: "center"
+   
   },
   myduo: {
     backgroundColor: 'rgba(0, 24, 47, 0.9)',
@@ -77,9 +79,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center'
   },
-  gradient:{
-    height: '28.2%'
-  },
+  // gradient:{
+  //   height: '28.2%'
+  // },
   img:{
     width: 40,
     height: 40,

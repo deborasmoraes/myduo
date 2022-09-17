@@ -16,10 +16,10 @@ export default function PageLogin({ navigation }) {
                 <View>
                     <ImageBackground
                         source={require('../../assets/minicial.png')}
-                        style={{ width: 360, height: 255, opacity: '90%'}} >
+                        style={styles.m} >
                         <Image
                             source={require('../../assets/myduo.png')}
-                            style={{ width: 40, height: 40, margin: 'auto' }}
+                            style={styles.logo}
                         >
 
                         </Image>
@@ -63,7 +63,7 @@ export default function PageLogin({ navigation }) {
                 <View style={styles.container2}>
                     <Text>Não possui conta?</Text>
                     <TouchableOpacity
-                        onPress={() => navigation.navigate('Registrar', { nome: 'Registrar' })}><Text style={{fontWeight: 600}}>Criar agora</Text></TouchableOpacity>
+                        onPress={() => navigation.navigate('Registrar', { nome: 'Registrar' })}><Text>Criar agora</Text></TouchableOpacity>
                 </View>
 
             </View>
@@ -79,18 +79,19 @@ const styles = StyleSheet.create({
         padding: 10
     },
     m: {
+        margin: 'auto',
         width: '100%',
-        height: '370%',
+        height: '54%',
         shadowOffset: { width: 1, height: 1 },
         shadowColor: '#385672'
     },
     logo: {
-        alignSelf: 'center',
-        width: '9%',
-        height: '50%'
+        alignSelf:'center',
+        width: '9.7%',
+        height: '7%',
+        marginTop: '15%'
     },
     login: {
-        fontWeight: 700,
         fontSize: 20,
         marginBottom: 5
     },
