@@ -1,25 +1,34 @@
 
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import * as Animatable from 'react-native-animatable'
 
 
 export default function Init({ navigation }) {
   return (
+    
      <LinearGradient
-        colors={['rgba(255, 255, 255, 0.51)', 'rgba(106, 126, 229, 0.39)']}
-        start={{ x: 4, y: 30 }}
-        end={{ x: 4, y: 50 }}
+     style={styles.gradient}
+        colors={['#FFFFFF', '#899AF7']}
+        start={{ x: 60, y: 40 }}
+        end={{ x: 30, y: 20 }}
          > 
-    <View>
-
-      <View style={styles.myduo}>
+   
+      <View  style={styles.myduo}>
+        <Animatable.View
+        animation="fadeInDown" 
+        delay='600'>
         <Image 
           source={require('../../assets/myduo.png')}
           style={styles.img}
         ></Image>
-        <Text style={styles.corTextoMD}>MyDuo</Text>
+        <Text style={styles.corTextoMD}>Myduo</Text>
+        </Animatable.View>
       </View>
       
+      <Animatable.View
+      animation="fadeInUp"
+      delay='800'>
         <TouchableOpacity
         style={styles.botaoLogin}
           onPress={() => {
@@ -33,9 +42,8 @@ export default function Init({ navigation }) {
             navigation.navigate('Registrar', { nome: 'Registrar' })
           }}
         ><Text>Registre-se!</Text></TouchableOpacity>
-      
-
-    </View>
+      </Animatable.View>
+    
     </LinearGradient>
   );
 }
@@ -46,8 +54,9 @@ const styles = StyleSheet.create({
    
   },
   myduo: {
-    backgroundColor: 'rgba(0, 24, 47, 0.9)',
-    height: 600,
+    backgroundColor: '#00182F',
+    height: '68%',
+    width: '100%',
     border: '#1976D2',
     borderWidth: 1,
     borderBottomEndRadius: 20,
@@ -55,19 +64,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   botaoLogin:{
-    backgroundColor: 'rgba(0, 24, 47, 0.82)',
+    backgroundColor: '#00182F',
     borderRadius: 20,
     color: '#FFFF',
-    opacity: '90%',
     width: '40%',
-    height: '20%',
+    height: '7%',
+    padding: '5%',
     alignSelf: 'center',
     alignItems: "center",
     justifyContent: 'center',
     marginTop: '15%'
   },
   botaoRegistrar:{
-    color: 'rgba(0, 24, 47, 0.82)',
+    color: '00182F',
     alignSelf: 'center',
     marginTop: '5%'
   },
@@ -77,11 +86,13 @@ const styles = StyleSheet.create({
   corTextoMD:{
     color: "#FFF",
     textAlign: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+
   },
-  // gradient:{
-  //   height: '28.2%'
-  // },
+  gradient:{
+    width: '100%',
+    height: '100%'
+  },
   img:{
     width: 40,
     height: 40,
