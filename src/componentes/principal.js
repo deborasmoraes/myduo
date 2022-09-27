@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Duos from './duos'
 import Perfil from './perfil'
 import Encontrar from './encontrar'
+import Jogos from './jogo';
 
 const Tab = createBottomTabNavigator()
 
@@ -18,7 +19,8 @@ export default function App() {
     <Tab.Navigator>
     <Tab.Screen name="Encontrar" component={Encontrar} />
     <Tab.Screen name="Perfil" component={Perfil} />
-    <Tab.Screen name="Duo's" component={Duos}/>
+    <Tab.Screen name="Duos" component={Duos}/>
+    <Tab.Screen name ='Jogos' component = {Jogos} />
   </Tab.Navigator>
   </NavigationContainer>
   

@@ -3,6 +3,16 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image, ImageBackgr
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable'
 
+const Background = ({ children }) => {
+    return (<LinearGradient
+        colors={['#FFFFFF', '#D6E1FF']}
+        style={{
+            flex: 1
+        }}
+    >
+        {children}
+    </LinearGradient>)
+}
 
 export default function PageLogin({ navigation }) {
 
@@ -45,12 +55,12 @@ export default function PageLogin({ navigation }) {
                         style={styles.botao1}
                         onPress={() => navigation.navigate('Principal', { nome: 'Principal' })}
                     ><Text style={{ color: '#FFF' }}>Entrar</Text> </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.botao2}
-                            onPress={() => navigation.navigate('Redefinir', { nome: 'Redefinir' })}
-                        ><Text>Esqueci a senha</Text></TouchableOpacity>
+                    <TouchableOpacity
+                        style={styles.botao2}
+                        onPress={() => navigation.navigate('Redefinir', { nome: 'Redefinir' })}
+                    ><Text>Esqueci a senha</Text></TouchableOpacity>
 
-                   
+
                 </View>
 
 
@@ -65,6 +75,7 @@ export default function PageLogin({ navigation }) {
                 </View>
 
             </View>
+
         </LinearGradient>
     )
 

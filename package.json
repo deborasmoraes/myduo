@@ -20,8 +20,12 @@
     "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+<<<<<<< HEAD
     "react-native": "^0.69.6",
     "react-native-animatable": "^1.3.3",
+=======
+    "react-native": "0.69.6",
+>>>>>>> 8980de7f0a0eb6cf1e0c51aae12510db5e17e4ae
     "react-native-btr": "^2.2.0",
     "react-native-masked-text": "^1.13.0",
     "react-native-pager-view": "5.4.24",
