@@ -12,6 +12,8 @@ import Principal from './src/componentes/principal';
 import Perfil from './src/componentes/perfil';
 import Encontrar from './src/componentes/encontrar'
 
+import Jogos from './src/componentes/jogo';
+
 
 const Stack = createNativeStackNavigator()
 
@@ -33,6 +35,7 @@ export default function App() {
     <Stack.Screen name="Principal" component={Principal}/>
     <Stack.Screen name="Perfil" component={Perfil}/>
     <Stack.Screen name="Encontrar" component={Encontrar}/>
+    <Stack.Screen name="Jogos" component={Jogos}/>
     </Stack.Navigator>
   </NavigationContainer>
   );

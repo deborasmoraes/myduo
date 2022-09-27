@@ -5,6 +5,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Amigos from './amigos'
 import Conversas from './conversas'
 import Solicitacoes from './solicitacoes'
+import Jogos from './jogo';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -20,6 +21,7 @@ export default function Duos() {
             <Tab.Screen name="Amigos" component={Amigos} />
             <Tab.Screen name="Conversas" component={Conversas} />
             <Tab.Screen name="Solicitações" component={Solicitacoes} />
+            <Tab.Screen name = "Jogos" component = {Jogos}/>
         </Tab.Navigator>
     )
 }

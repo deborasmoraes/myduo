@@ -2,17 +2,21 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+const Background = ({children}) => {
+        return ( <LinearGradient
+            colors={['#FFFFFF', '#D6E1FF']}
+            style={{
+                flex: 1}}
+        >
+            {children}
+            </LinearGradient>)
+}
 
 export default function PageLogin({ navigation }) {
 
     return (
-        <LinearGradient
-            style={styles.gradient}
-            colors={['rgba(255, 255, 255, 0.51)', 'rgba(106, 126, 229, 0.39)']}
-            start={{ x: 4, y: 30 }}
-            end={{ x: 4, y: 50 }}
-        >
-            <View>
+       <Background>
+            
                 <View>
                     <ImageBackground
                         source={require('../../assets/minicial.png')}
@@ -66,8 +70,8 @@ export default function PageLogin({ navigation }) {
                         onPress={() => navigation.navigate('Registrar', { nome: 'Registrar' })}><Text>Criar agora</Text></TouchableOpacity>
                 </View>
 
-            </View>
-        </LinearGradient>
+            
+            </Background>
     )
 
 
