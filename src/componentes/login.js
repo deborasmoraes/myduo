@@ -3,17 +3,6 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image, ImageBackgr
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable'
 
-const Background = ({ children }) => {
-    return (<LinearGradient
-        colors={['#FFFFFF', '#D6E1FF']}
-        style={{
-            flex: 1
-        }}
-    >
-        {children}
-    </LinearGradient>)
-}
-
 export default function PageLogin({ navigation }) {
 
     return (
@@ -34,7 +23,7 @@ export default function PageLogin({ navigation }) {
                     </Image>
                     <Animatable.View
                         animation="fadeInUp"
-                        delay='800'>
+                        delay={800}>
                         <Text style={styles.login}>Login</Text>
 
                         <View style={styles.container}>

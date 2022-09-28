@@ -10,14 +10,14 @@ export default function Init({ navigation }) {
      <LinearGradient
      style={styles.gradient}
         colors={['#FFFFFF', '#899AF7']}
-        start={{ x: 60, y: 40 }}
-        end={{ x: 30, y: 20 }}
+        start={{ x: 30, y: 20 }}
+        end={{ x: 60, y: 40 }}
          > 
    
       <View  style={styles.myduo}>
         <Animatable.View
         animation="fadeInDown" 
-        delay='600'>
+        delay={600}>
         <Image 
           source={require('../../assets/myduo.png')}
           style={styles.img}
@@ -28,7 +28,7 @@ export default function Init({ navigation }) {
       
       <Animatable.View
       animation="fadeInUp"
-      delay='800'>
+      delay={800}>
         <TouchableOpacity
         style={styles.botaoLogin}
           onPress={() => {
