@@ -6,11 +6,13 @@ import Amigos from './amigos'
 import Conversas from './conversas'
 import Solicitacoes from './solicitacoes'
 import Jogos from './jogo';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Tab = createMaterialTopTabNavigator();
+const Stack = createNativeStackNavigator()
 
 export default function Duos() {
-    return (
+    return (<View>
         <Tab.Navigator
             initialRouteName="Amigos"
             screenOptions={{
@@ -21,8 +23,11 @@ export default function Duos() {
             <Tab.Screen name="Amigos" component={Amigos} />
             <Tab.Screen name="Conversas" component={Conversas} />
             <Tab.Screen name="Solicitações" component={Solicitacoes} />
-            <Tab.Screen name = "Jogos" component = {Jogos}/>
+            
         </Tab.Navigator>
+
+        
+        </View>
     )
 }
 const styles = StyleSheet.create({
@@ -30,3 +35,4 @@ const styles = StyleSheet.create({
         backgroundColor: '',
     },
 });
+
