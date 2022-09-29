@@ -10,8 +10,8 @@ export default function Init({ navigation }) {
      <LinearGradient
      style={styles.gradient}
         colors={['#FFFFFF', '#899AF7']}
-        start={{ x: 30, y: 20 }}
-        end={{ x: 60, y: 40 }}
+        start={{ x: 10, y: 70 }}
+        end={{ x: 80, y: 60 }}
          > 
    
       <View  style={styles.myduo}>
@@ -65,11 +65,11 @@ const styles = StyleSheet.create({
   },
   botaoLogin:{
     backgroundColor: '#00182F',
-    borderRadius: 20,
+    borderRadius: 30,
     color: '#FFFF',
-    width: '40%',
-    height: '7%',
-    padding: '5%',
+    width: '50%',
+    height: '20%',
+    padding: '2%',
     alignSelf: 'center',
     alignItems: "center",
     justifyContent: 'center',
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     marginTop: '5%'
   },
   corTexto:{
-    color: "#FFF"
+    color: "#FFFF"
   },
   corTextoMD:{
     color: "#FFF",

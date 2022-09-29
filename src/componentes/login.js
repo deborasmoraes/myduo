@@ -8,21 +8,23 @@ export default function PageLogin({ navigation }) {
     return (
         <LinearGradient
             style={styles.gradient}
-            colors={['#FFFFFF', '#C2CBFB']}
-            start={{ x: 60, y: 40 }}
-            end={{ x: 30, y: 4 }}
+            colors={['#C2CBFB', '#FFFF']}
+            start={{ x: 90, y: 40 }}
+            end={{ x: 5, y: 80 }}
         >
             <View>
                 <ImageBackground
                     source={require('../../assets/minicial.png')}
                     style={styles.m}>
-                    <Image
+                    <Animatable.Image
+                        animation="fadeInUp"
+                        delay={400}
                         source={require('../../assets/myduo.png')}
                         style={styles.logo}
                     >
-                    </Image>
+                    </Animatable.Image>
                     <Animatable.View
-                        animation="fadeInUp"
+                        animation="fadeInLeft"
                         delay={800}>
                         <Text style={styles.login}>Login</Text>
 
@@ -37,31 +39,33 @@ export default function PageLogin({ navigation }) {
                             />
                         </View>
                     </Animatable.View>
+                    <Animatable.View
+                    animation="fadeInUp"
+                    delay={800}>
+                        <TouchableOpacity
+                            style={styles.botao1}
+                            onPress={() => navigation.navigate('Principal', { nome: 'Principal' })}
+                        >
+                            <Text style={{ color: '#FFFF', alignSelf: 'center' }}>Entrar</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.botao2}
+                            onPress={() => navigation.navigate('Redefinir', { nome: 'Redefinir' })}
+                        >
+                            <Text>Esqueci a senha</Text>
+                        </TouchableOpacity>
+                        <View style={styles.container}>
+                            <Text style={{ textAlign: 'center', marginTop: '5%' }}>Ou continue com</Text>
+                            <TouchableOpacity style={styles.botao3}><Text style={{ color: '#FFF' }}>Google</Text></TouchableOpacity>
+                            <TouchableOpacity style={styles.botao3}><Text style={{ color: '#FFF' }}>Facebook</Text></TouchableOpacity>
+
+                            <Text style={styles.container2}>Não possui conta?</Text>
+                            <TouchableOpacity
+                                onPress={() => navigation.navigate('Registrar', { nome: 'Registrar' })}><Text>Criar agora</Text></TouchableOpacity>
+                        </View>
+                    </Animatable.View>
                 </ImageBackground>
 
-                <View>
-                    <TouchableOpacity
-                        style={styles.botao1}
-                        onPress={() => navigation.navigate('Principal', { nome: 'Principal' })}
-                    ><Text style={{ color: '#FFF' }}>Entrar</Text> </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.botao2}
-                        onPress={() => navigation.navigate('Redefinir', { nome: 'Redefinir' })}
-                    ><Text>Esqueci a senha</Text></TouchableOpacity>
-
-
-                </View>
-
-
-                <View style={styles.container}>
-                    <Text style={{ textAlign: 'center', marginTop: '5%' }}>Ou continue com</Text>
-                    <TouchableOpacity style={styles.botao3}><Text style={{ color: '#FFF' }}>Google</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.botao3}><Text style={{ color: '#FFF' }}>Facebook</Text></TouchableOpacity>
-
-                    <Text style={{ textAlign: 'center', marginTop: '3.2%' }}>Não possui conta?</Text>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate('Registrar', { nome: 'Registrar' })}><Text>Criar agora</Text></TouchableOpacity>
-                </View>
 
             </View>
 
@@ -75,29 +79,31 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: '13%'
     },
     m: {
         width: '100%',
-        height: '64%',
+        height: '69%',
         shadowOffset: { width: 0.1, height: 0.2 },
         shadowColor: '#385672'
     },
     logo: {
         alignSelf: 'center',
-        width: '9.7%',
-        height: '7%',
-        marginTop: '15%'
+        width: '11%',
+        height: '10%',
+        padding: '4%',
+        marginTop: '17%'
     },
     login: {
-        fontSize: 20,
+        fontSize: 35,
         justifyContent: 'flex-end',
         alignSelf: 'center',
-        marginTop: '35%',
+        marginTop: '36%',
+        marginBottom: '9%',
+        fontWeight: 'bold'
     },
     input1: {
         width: '80%',
-        marginTop: '2%',
+        marginTop: '3%',
 
     },
     input2: {
@@ -105,39 +111,35 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         width: '80%',
         alignSelf: 'center',
-        padding: '2%'
+        padding: '0.5%'
     },
     botao1: {
         backgroundColor: '#00182F',
         borderRadius: 20,
-        textDecorationStyle: '#FFFF',
-        opacity: '90%',
-        width: '40%',
-        padding: '4.8%',
-        height: '40%',
+        width: '65%',
+        height: '10%',
         alignSelf: 'center',
-        alignItems: "center",
-        justifyContent: 'center',
-        marginTop: '2.5%'
+        padding: '3%',
+        justifyContent: 'flex-start',
+        marginTop: '9%'
     },
     botao2: {
         color: 'rgba(0, 24, 47, 0.82)',
         alignSelf: 'center',
-        marginTop: '2%'
+        marginTop: '4%'
     },
     botao3: {
         backgroundColor: '#00182F',
         borderRadius: 20,
-        opacity: '90%',
         width: '40%',
-        height: '30%',
+        height: '14.5%',
         marginTop: '3%',
-        textAlign: 'center',
+        alignItems: 'center',
         justifyContent: 'center'
     },
     container2: {
         textAlign: 'center',
-        marginTop: '11%'
+        marginTop: '14%'
 
     },
     gradient: {

@@ -19,24 +19,38 @@ const Stack = createNativeStackNavigator()
 
 export default function App() {
   return (
-  <NavigationContainer>
-    <Stack.Navigator>
-    <Stack.Screen 
-     options={{title: '', headerTransparent: true,
-    headerShown: false}}
-     name="Home" component={Init} />
-    <Stack.Screen 
-    options={{title: '', headerTransparent: true,
-    headerShown: false}}
-    name="Login" component={PageLogin} />
-    <Stack.Screen name="Registrar" component={PageRegistrar}/>
-    <Stack.Screen name="Redefinir" component={Redefinir}/>
-    <Stack.Screen name="Duos" component={Duos}/>
-    <Stack.Screen name="Principal" component={Principal}/>
-    <Stack.Screen name="Perfil" component={Perfil}/>
-    <Stack.Screen name="Encontrar" component={Encontrar}/>
-    <Stack.Screen name="Jogos" component={Jogos}/>
-    </Stack.Navigator>
-  </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{
+            title: '', headerTransparent: true,
+            headerShown: false
+          }}
+          name="Home" component={Init} />
+        <Stack.Screen
+          options={{
+            title: '', headerTransparent: true,
+            headerShown: false
+          }}
+          name="Login" component={PageLogin} />
+        <Stack.Screen
+          options={{
+            title: '', headerTransparent: true,
+            headerShown: false
+          }}
+          name="Registrar" component={PageRegistrar} />
+        <Stack.Screen name="Redefinir" component={Redefinir} />
+        <Stack.Screen name="Duos" component={Duos} />
+        <Stack.Screen
+          options={{
+            title: '', headerTransparent: true,
+            headerShown: false
+          }}
+          name="Principal" component={Principal} />
+        <Stack.Screen name="Perfil" component={Perfil} />
+        <Stack.Screen name="Encontrar" component={Encontrar} />
+        <Stack.Screen name="Jogos" component={Jogos} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
