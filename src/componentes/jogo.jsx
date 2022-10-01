@@ -51,17 +51,4 @@ export default function Jogos({ navigation, props }) {
 
 }
 
-export  function Routes(){
-    const Stack = createNativeStackNavigator()
-    return(
-        <NavigationContainer>
-            <GamesContexts.Provider value = {games}>
-            <Stack.Navigator>
-                <Stack.Screen name = "Jogos" component = {Jogos}/>
-                <Stack.Screen name = "perfil" component = {Perfil}/>
-                <Stack.Screen/>
-            </Stack.Navigator>
-            </GamesContexts.Provider>
-        </NavigationContainer>
-    )
-}
+
