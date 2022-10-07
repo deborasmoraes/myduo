@@ -2,9 +2,20 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable'
+import { useState } from 'react';
 
 export default function PageLogin({ navigation }) {
+    const [email, setEmail] = useState()
+    const [senha, setSenha] = useState()
+    
+    const Login = () => {
+        fetch(`http://localhost:8080/usuarios/login`, {
+            senha: senha
+        }).then(data => data.json())
+        .then(result =>{console.log(result);})
+            
 
+    }
     return (
         <LinearGradient
             style={styles.gradient}
@@ -31,6 +42,7 @@ export default function PageLogin({ navigation }) {
                         <View style={styles.container}>
                             <Text style={styles.input1}>Email</Text>
                             <TextInput
+
                                 style={styles.input2}
                             />
 
@@ -44,7 +56,8 @@ export default function PageLogin({ navigation }) {
                     delay={800}>
                         <TouchableOpacity
                             style={styles.botao1}
-                            onPress={() => navigation.navigate('Principal', { nome: 'Principal' })}
+                            onPress ={  Login}
+                            // onPress={() => navigation.navigate('Principal', { nome: 'Principal' })}
                         >
                             <Text style={{ color: '#FFFF', alignSelf: 'center' }}>Entrar</Text>
                         </TouchableOpacity>

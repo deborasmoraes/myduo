@@ -50,8 +50,7 @@ export default function Perfil({ navigation }) {
             renderItem = {({item}) =>{return(<Text>{item.title}</Text>)}}
             keyExtractor = {item  =>{item.id}}
           />
-          </SafeAreaView> : <TouchableOpacity
-                onPress={() => { navigation.navigate('Routes', {nome: 'Routes'}) }}><Text>Editar Jogos</Text></TouchableOpacity>}
+          </SafeAreaView> :<Jogos/>} 
             <Text>Horarios disponiveis</Text>
 
             <View>

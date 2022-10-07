@@ -11,33 +11,38 @@ export default function PageRegistrar({ navigation }) {
     const [senha, setSenha] = useState('')
     const [idade, setIdade] = useState('')
     const [msg, setMsg] = useState('')
-    // const save = () => {
-    //     fetch('http://localhost:8080/usuarios', {
-    //         method: 'POST',
-    //         headers: {
-    //             Accept: 'application/json', 'content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({
-    //             nome: nome,
-    //             email: email,
-    //             senha: senha,
-    //             datanasc: idade
 
-    //         })
-    //     }
-    //     ).then(() => { setMsg("deu certo carai") })
-    // }
+    const save = () => {
+        fetch('http://localhost:8080/usuarios', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json', 'content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: nome,
+                email: email,
+                senha: senha,
+                datanasc: idade
+
+            })
+        }
+        ).then(() => { setMsg("Registro concluido") })
+    }
 
 
-    // const exist = () => {
+    const exist = () => {
+        fetch(`http://localhost:8080/usuarios/${email}`)
+            .then(data => data.json())
+            .then(result => { if (result.email === email || error) {return(alert('debs')) }else{save()}})
 
-    //     useEffect(() => {
-    //         fetch(`http://localhost:8080/usuarios/${email}`)
-    //         .then(data => data.json())
-    //                 .then(result => { console.log(result.nome)})
-    //     })
-    // }
+    }
 
+
+    function call() {
+        exist()
+        
+       
+    }
     return (
         <View>
             <Text>Registre</Text>
@@ -73,7 +78,7 @@ export default function PageRegistrar({ navigation }) {
                 placeholder='Insira sua data de nascimento' />
 
             <TouchableOpacity
-                onPress={save}
+                onPress={call}
             ><Text>Registre-se</Text></TouchableOpacity>
             <Text>{msg}</Text>
 
